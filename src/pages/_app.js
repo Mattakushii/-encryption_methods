@@ -13,7 +13,7 @@ function App ({ Component, pageProps }) {
                 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
-                <title>Brave developers terminal</title>
+                <title>Информационная безопасность и защита информации</title>
             </Head>
             <MainLayout>
                 <Component {...pageProps}/>
