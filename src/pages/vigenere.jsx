@@ -15,27 +15,86 @@ const Vigenere = () => {
     }
 
     const regExp = {
-        ru: /[А-Я]/g,
+        ru: /[А-ЯЁ]/g,
         en: /[A-Z]/g,
         all: /[~`!@#$%^&*()_+"№;%:?_+0-9]/g
     }
 
     function encrypt() {
         if(checkLang()) {
-            console.log('encrypt');
+            const encWord = word.split('');
+            const encKey = key.split('');
+            if (encKey[0] && encWord[0]) {
+                const langChars = alphabet[lang];
+                let encrypted = [];
+                let keyIter = 0;
+                for (let i = 0; i < encWord.length; i++) {
+                    if (keyIter == encKey.length) {
+                        keyIter = 0;
+                    }
+                    let textChar;
+                    let keyChar;
+                    let codeChar;
+                    for (let j = 0; j < langChars.length; j++) {
+                        if (langChars[j] == encWord[i]) {
+                            textChar = j;
+                        }
+                        if (langChars[j] == encKey[keyIter]) {
+                            keyChar = j;
+                        }
+                    }
+                    if (textChar + keyChar > langChars.length - 1) {
+                        codeChar = textChar + keyChar - langChars.length;
+                    } else {
+                        codeChar = textChar + keyChar;
+                    }
+                    encrypted.push(langChars[codeChar]);
+                    keyIter++;
+                }
+                setResult(encrypted.join(''))
+            }
         } else {
-            console.log('Error');
+            alert('Error: Некоторые символы не соответствуют выбранному языку');
         }
     }
     
     function decrypt() {
         if(checkLang()) {
-            console.log('decrypt');
+            const decWord = word.split('');
+            const decKey = key.split('');
+            if (decKey[0] && decWord[0]) {
+                const langChars = alphabet[lang];
+                let decrypted = [];
+                let keyIter = 0;
+                for (let i = 0; i < decWord.length; i++) {
+                    if (keyIter == decKey.length) {
+                        keyIter = 0;
+                    }
+                    let textChar;
+                    let keyChar;
+                    let codeChar;
+                    for (let j = 0; j < langChars.length; j++) {
+                        if (langChars[j] == decWord[i]) {
+                            codeChar = j;
+                        }
+                        if (langChars[j] == decKey[keyIter]) {
+                            keyChar = j;
+                        }
+                    }
+                    if (codeChar - keyChar < 0) {
+                        textChar = codeChar - keyChar + langChars.length;
+                    } else {
+                        textChar = codeChar - keyChar;
+                    }
+                    decrypted.push(langChars[textChar]);
+                    keyIter++;
+                }
+                setResult(decrypted.join(''))
+            }
         } else {
-            console.log('Error');
+            alert('Error: Некоторые символы не соответствуют выбранному языку');
         }
     }
-
 
     //event Handlers
     function changeAction(e) {
@@ -130,7 +189,7 @@ const Vigenere = () => {
                 <button onClick={()=>{startMethod()}}>Подтвердить</button>
             </div>
             <div className="result_container">
-                123
+                {result}
             </div>
         </div>
     )

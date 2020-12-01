@@ -3,16 +3,19 @@ import Link from 'next/link'
 const MainLayout = (props) => {
     return(
         <div className="container">
-            <div>
+            <header className="header">
                 <Link href="/">
                     Home
                 </Link>
                 <div>
                 <Link href="/vigenere">
                     VIGENETE
+                </Link>
+                <Link href="/des">
+                    DES
                 </Link>  
                 </div>
-            </div>
+            </header>
             <div>
                 {props.children}
             </div>
