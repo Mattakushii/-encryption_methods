@@ -4,19 +4,21 @@ const MainLayout = (props) => {
     return(
         <div className="container">
             <header className="header">
-                <Link href="/">
-                    Home
-                </Link>
-                <div>
-                <Link href="/vigenere">
-                    VIGENETE
-                </Link>
-                <Link href="/des">
-                    DES
-                </Link>  
+                <div className="header_container">
+                    <div className="header_logo">
+                        <Link href="/"><h1>НА ГЛАВНУЮ</h1></Link>
+                    </div>
+                    <nav className="header_nav">
+                        <div className="header_nav_link">
+                            <Link href="/vigenere">Шифр Виженера</Link>
+                        </div>
+                        <div className="header_nav_link">
+                            <Link href="/des">Алгоритм DES</Link>  
+                        </div>
+                    </nav>
                 </div>
             </header>
-            <div>
+            <div className="content">
                 {props.children}
             </div>
         </div>

@@ -211,9 +211,9 @@ const DES = () => {
     return(
         <div className='page_container'>
         <div className="method_inputs">
-            <h4 className="method_name">
+            <h3 className="method_name">
                 Метод шифрования DES
-            </h4>
+            </h3>
             <div className="actions_container">
                 <label htmlFor="action">Действие: </label>
                 <select className="select" name="action" id="action" onChange={(e) => { changeAction(e)} }>
@@ -227,11 +227,13 @@ const DES = () => {
                 <input value={encKey} className="input" name="key" type="text" placeholder="Ключ" onChange={e => {keyHandler(e)}}/>
                 <input value={word} className="input" name="word" type="text" placeholder="Слово" onChange={e => {wordHandler(e)}}/>
             </div>
-            <button onClick={()=>{startMethod()}}>Подтвердить</button>
+            <button className="btn" onClick={()=>{startMethod()}}>Подтвердить</button>
         </div>
         <div className="result_container">
-            Зашифрованная строка: {resultWord}<br/>
-            Ключ: {resultKey}
+            <div className="result">
+                Зашифрованная строка: {resultWord}<br/>
+                Ключ: {resultKey}
+            </div>
         </div>
     </div>
     )

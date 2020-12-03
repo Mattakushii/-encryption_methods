@@ -164,9 +164,9 @@ const Vigenere = () => {
     return(
         <div className='page_container'>
             <div className="method_inputs">
-                <h4 className="method_name">
+                <h3 className="method_name">
                     Шифр Виженера
-                </h4>
+                </h3>
                 <div className="actions_container">
                     <label htmlFor="action">Действие: </label>
                     <select className="select" name="action" id="action" onChange={(e) => { changeAction(e)}}>
@@ -186,10 +186,12 @@ const Vigenere = () => {
                     <input value={key} className="input" name="key" type="text" placeholder="Ключ" onChange={e => {keyHandler(e)}}/>
                     <input value={word} className="input" name="word" type="text" placeholder="Слово" onChange={e => {wordHandler(e)}}/>
                 </div>
-                <button onClick={()=>{startMethod()}}>Подтвердить</button>
+                <button className="btn" onClick={()=>{startMethod()}}>Подтвердить</button>
             </div>
             <div className="result_container">
-                {result}
+                <div className="result">
+                    {result}
+                </div>
             </div>
         </div>
     )

@@ -7,5 +7,139 @@
 .container {
     height: 100vh;
     width: 100%;
-    background-color: pink;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 70px auto;
+    background-color: rgb(235, 235, 235);
+}
+
+.header {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_logo {
+    height: 40px;
+    width: 208px
+}
+
+.header_logo > h1 {
+    cursor: pointer;
+}
+
+.header_container {
+    width: 98%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.header_nav {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_nav_link > a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.header_nav_link > a:hover {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page_container {
+    width: 98%;
+    height: calc(100% - 20px);
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+}
+
+.method_inputs {
+    width: calc(100% - 20px);
+    height: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.method_name {
+    margin-bottom: 20px;
+}
+
+.actions_container{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.select {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input {
+    width: 55%;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.inputs_container {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.result_container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result {
+    font-size: 30px;
 }
