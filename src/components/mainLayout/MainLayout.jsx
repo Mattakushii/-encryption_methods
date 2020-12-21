@@ -15,6 +15,9 @@ const MainLayout = (props) => {
                         <div className="header_nav_link">
                             <Link href="/des">Алгоритм DES</Link>  
                         </div>
+                        <div className="header_nav_link">
+                            <Link href="/probability-cipher">Вероятностный шифр</Link>  
+                        </div>
                     </nav>
                 </div>
             </header>
