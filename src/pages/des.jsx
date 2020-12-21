@@ -68,7 +68,6 @@ const DES = () => {
 
     // Дополнить ключ символами 
     function correctKeyWord(value, keyLength) {
-        console.log(value);
         if (value.length > keyLength) {
             value = value.substring(0, keyLength);
         } else {
@@ -183,7 +182,6 @@ const DES = () => {
     //Events
     function changeAction(e) {
         setAction(e.target.value);
-        console.log(e.target.value);
     }
 
     function keyHandler(e) {
