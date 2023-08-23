@@ -16,7 +16,10 @@ function App ({ Component, pageProps }) {
                 <title>Информационная безопасность и защита информации</title>
             </Head>
             <MainLayout>
-                <Component {...pageProps}/>
+                <>
+                    <div>123123123</div>
+                    <Component {...pageProps}/>
+                </>
             </MainLayout>
         </>
     )
